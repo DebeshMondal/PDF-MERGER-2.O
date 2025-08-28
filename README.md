@@ -39,7 +39,5 @@ A modern, user-friendly web app to merge multiple PDF files into a single docume
 - [pdf-lib](https://pdf-lib.js.org/) (loaded via CDN)
 - [Font Awesome](https://fontawesome.com/) (icons via CDN)
 
-## License
 
-MIT
 
