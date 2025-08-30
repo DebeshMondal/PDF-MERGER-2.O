@@ -71,25 +71,27 @@
                 <div class="feedback-form-section">
                     <h2><i class="fas fa-comment-dots"></i> Send Feedback</h2>
                     <form class="feedback-form" id="feedbackForm">
-                        <div class="form-group">
-                            <label for="feedbackType">Feedback Type:</label>
-                            <select id="feedbackType" name="feedbackType" required>
-                                <option value="">Select type...</option>
-                                <option value="suggestion">💡 Feature Suggestion</option>
-                                <option value="bug">🐛 Bug Report</option>
-                                <option value="improvement">⚡ Improvement Idea</option>
-                                <option value="general">💬 General Feedback</option>
-                            </select>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="feedbackType">Feedback Type</label>
+                                <select id="feedbackType" name="feedbackType" required>
+                                    <option value="">Choose category...</option>
+                                    <option value="suggestion">💡 Feature Suggestion</option>
+                                    <option value="bug">🐛 Bug Report</option>
+                                    <option value="improvement">⚡ Improvement Idea</option>
+                                    <option value="general">💬 General Feedback</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="userEmail">Email (optional)</label>
+                                <input type="email" id="userEmail" name="userEmail" placeholder="your.email@example.com">
+                            </div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="feedbackMessage">Your Message:</label>
-                            <textarea id="feedbackMessage" name="feedbackMessage" rows="5" placeholder="Share your thoughts, suggestions, or report issues..." required></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="userEmail">Email (optional):</label>
-                            <input type="email" id="userEmail" name="userEmail" placeholder="your.email@example.com">
+                            <label for="feedbackMessage">Your Message</label>
+                            <textarea id="feedbackMessage" name="feedbackMessage" placeholder="Share your thoughts, suggestions, or report issues. Be as detailed as you'd like!" required></textarea>
                         </div>
                         
                         <button type="submit" class="btn-primary feedback-btn">
