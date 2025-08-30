@@ -65,12 +65,66 @@
 
                 <div class="contact-section">
                     <h2>Project Feedback</h2>
-                    <p>This PDF merger is part of my AI exploration journey. Your feedback helps me improve and create better tools. Don't hesitate to share your thoughts or suggestions!</p>
+                    <p>This PDF merger is part of my AI exploration journey. Your feedback helps me improve and create better tools!</p>
+                </div>
+
+                <div class="feedback-form-section">
+                    <h2><i class="fas fa-comment-dots"></i> Send Feedback</h2>
+                    <form class="feedback-form" id="feedbackForm">
+                        <div class="form-group">
+                            <label for="feedbackType">Feedback Type:</label>
+                            <select id="feedbackType" name="feedbackType" required>
+                                <option value="">Select type...</option>
+                                <option value="suggestion">💡 Feature Suggestion</option>
+                                <option value="bug">🐛 Bug Report</option>
+                                <option value="improvement">⚡ Improvement Idea</option>
+                                <option value="general">💬 General Feedback</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="feedbackMessage">Your Message:</label>
+                            <textarea id="feedbackMessage" name="feedbackMessage" rows="5" placeholder="Share your thoughts, suggestions, or report issues..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="userEmail">Email (optional):</label>
+                            <input type="email" id="userEmail" name="userEmail" placeholder="your.email@example.com">
+                        </div>
+                        
+                        <button type="submit" class="btn-primary feedback-btn">
+                            <i class="fas fa-paper-plane"></i> Send Feedback
+                        </button>
+                    </form>
                 </div>
             </div>
         </main>
     </div>
 
     <script src="darkmode.js"></script>
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const feedbackType = formData.get('feedbackType');
+            const message = formData.get('feedbackMessage');
+            const email = formData.get('userEmail');
+            
+            // Create mailto link
+            const subject = `PDF Merger Feedback: ${feedbackType}`;
+            const body = `Feedback Type: ${feedbackType}\n\nMessage:\n${message}\n\n${email ? `From: ${email}` : 'Anonymous feedback'}`;
+            const mailtoLink = `mailto:debeshmondal05@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Thank you for your feedback! Your email client should open with the feedback ready to send.');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
 </body>
 </html>

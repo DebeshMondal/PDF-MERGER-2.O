@@ -560,6 +560,100 @@ body::before {
     margin-bottom: 0;
 }
 
+.feedback-form-section {
+    margin-top: 30px;
+    padding: 25px;
+    background: #f8f9ff;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.feedback-form-section h2 {
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.feedback-btn {
+    align-self: flex-start;
+    min-width: 160px;
+}
+
+.dark-mode .feedback-form-section {
+    background: #2a2a3e;
+    border-left-color: #74c0fc;
+}
+
+.dark-mode .feedback-form-section h2 {
+    color: #e0e6ed;
+}
+
+.dark-mode .form-group label {
+    color: #e0e6ed;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group select,
+.dark-mode .form-group textarea {
+    background: #1e1e2e;
+    color: #e0e6ed;
+    border-color: #74c0fc;
+}
+
+.dark-mode .form-group input:focus,
+.dark-mode .form-group select:focus,
+.dark-mode .form-group textarea:focus {
+    border-color: #91d5ff;
+    box-shadow: 0 0 0 3px rgba(116, 192, 252, 0.1);
+}
+
 .total-info {
     margin-top: 15px;
     padding: 12px;
