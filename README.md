@@ -14,8 +14,8 @@ A modern, user-friendly web app to merge multiple PDF files into a single docume
 - **Keyboard shortcuts**:  
 	- <kbd>Delete</kbd> to clear all  
 	- <kbd>Ctrl</kbd> + <kbd>Enter</kbd> to merge
-
-## How It Works
+ 
+## How It orks
 
 - All processing is done locally in your browser using [pdf-lib](https://pdf-lib.js.org/).
 - No files are uploaded to any server.
