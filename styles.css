@@ -1159,6 +1159,206 @@ body.dark-mode {
     border-left-color: #27ae60;
 }
 
+/* PDF Splitter Styles */
+.split-section {
+    margin-top: 30px;
+}
+
+.pdf-info-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #667eea;
+}
+
+.pdf-info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.pdf-info-item i {
+    font-size: 2rem;
+    color: #e74c3c;
+    margin-right: 15px;
+}
+
+.pdf-info-item h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.pdf-info-item p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.pdf-metadata {
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.pdf-metadata p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.split-options {
+    background: #f8f9ff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.split-options h4 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.split-options .option-group {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.split-options .option-group:hover {
+    border-left-color: #667eea;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.split-options .option-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #333;
+}
+
+.split-options input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #667eea;
+}
+
+.range-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f8f9ff;
+    border-radius: 6px;
+}
+
+.range-inputs input {
+    width: 80px;
+    padding: 8px 12px;
+    border: 2px solid #e8ebf0;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.range-inputs span {
+    color: #666;
+    font-weight: 500;
+}
+
+#customPages {
+    margin-top: 10px;
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e8ebf0;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+}
+
+#customPages:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.toast.info {
+    background: #3498db;
+}
+
+/* Dark mode styles for splitter */
+.dark-mode .pdf-info-card {
+    background: #1e1e2e;
+    border-left-color: #74c0fc;
+}
+
+.dark-mode .pdf-info-item h4 {
+    color: #e0e6ed;
+}
+
+.dark-mode .pdf-info-item p,
+.dark-mode .pdf-metadata p {
+    color: #a6adc8;
+}
+
+.dark-mode .pdf-metadata {
+    border-top-color: #3a3a4e;
+}
+
+.dark-mode .split-options {
+    background: #2a2a3e;
+    border-color: rgba(116, 192, 252, 0.2);
+}
+
+.dark-mode .split-options h4 {
+    color: #e0e6ed;
+}
+
+.dark-mode .split-options .option-group {
+    background: #1e1e2e;
+}
+
+.dark-mode .split-options .option-group:hover {
+    border-left-color: #74c0fc;
+}
+
+.dark-mode .split-options .option-group label {
+    color: #e0e6ed;
+}
+
+.dark-mode .range-inputs {
+    background: #2a2a3e;
+}
+
+.dark-mode .range-inputs input,
+.dark-mode #customPages {
+    background: #2a2a3e;
+    color: #e0e6ed;
+    border-color: #74c0fc;
+}
+
+.dark-mode .range-inputs input:focus,
+.dark-mode #customPages:focus {
+    border-color: #91d5ff;
+    box-shadow: 0 0 0 3px rgba(116, 192, 252, 0.1);
+}
+
+.dark-mode .range-inputs span {
+    color: #a6adc8;
+}
+
 .dark-mode .total-info {
     background: #74c0fc;
     color: #1e1e2e;
