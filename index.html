@@ -53,12 +53,43 @@
 
             <div class="merge-section" id="mergeSection" style="display: none;">
                 <div class="merge-options">
-                    <label for="outputName">Output filename:</label>
-                    <input type="text" id="outputName" value="merged-document.pdf" placeholder="Enter filename">
+                    <div class="option-group">
+                        <label for="outputName">Output filename:</label>
+                        <input type="text" id="outputName" value="merged-document.pdf" placeholder="Enter filename">
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="compressionLevel">Compression Level:</label>
+                        <select id="compressionLevel">
+                            <option value="none">No Compression</option>
+                            <option value="low">Low (Faster)</option>
+                            <option value="medium" selected>Medium (Balanced)</option>
+                            <option value="high">High (Smaller File)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="option-group">
+                        <label>
+                            <input type="checkbox" id="preserveBookmarks"> Preserve Bookmarks
+                        </label>
+                    </div>
+                    
+                    <div class="option-group password-section">
+                        <label>
+                            <input type="checkbox" id="enablePassword"> Password Protect PDF
+                        </label>
+                        <input type="password" id="pdfPassword" placeholder="Enter password" style="display: none;">
+                    </div>
                 </div>
-                <button class="btn-primary" id="mergeBtn">
-                    <i class="fas fa-compress-arrows-alt"></i> Merge PDFs
-                </button>
+                
+                <div class="merge-actions">
+                    <button class="btn-secondary" id="previewBtn">
+                        <i class="fas fa-eye"></i> Preview
+                    </button>
+                    <button class="btn-primary" id="mergeBtn">
+                        <i class="fas fa-compress-arrows-alt"></i> Merge PDFs
+                    </button>
+                </div>
             </div>
         </main>
 
