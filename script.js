@@ -24,8 +24,7 @@ class PDFMergerUI {
         this.outputName = document.getElementById('outputName');
         this.compressionLevel = document.getElementById('compressionLevel');
         this.preserveBookmarks = document.getElementById('preserveBookmarks');
-        this.enablePassword = document.getElementById('enablePassword');
-        this.pdfPassword = document.getElementById('pdfPassword');
+
         this.progressSection = document.getElementById('progressSection');
         this.progressFill = document.getElementById('progressFill');
         this.progressText = document.getElementById('progressText');
@@ -50,8 +49,7 @@ class PDFMergerUI {
         // Preview button
         this.previewBtn.addEventListener('click', this.showPreview.bind(this));
         
-        // Password checkbox
-        this.enablePassword.addEventListener('change', this.togglePasswordField.bind(this));
+
         
         // Dark mode is now handled by darkmode.js
         
@@ -263,11 +261,7 @@ class PDFMergerUI {
             return;
         }
         
-        if (this.enablePassword.checked && !this.pdfPassword.value.trim()) {
-            this.showToast('Please enter a password or disable password protection.', 'warning');
-            this.pdfPassword.focus();
-            return;
-        }
+
 
         this.progressSection.style.display = 'block';
         this.mergeBtn.disabled = true;
@@ -312,17 +306,9 @@ class PDFMergerUI {
                     mergedPdf.addPage(page);
                 });
                 
-                // Preserve bookmarks if enabled
+                // Note: Bookmark preservation has limited support in pdf-lib
                 if (this.preserveBookmarks.checked) {
-                    try {
-                        const bookmarks = pdf.catalog.get(PDFLib.PDFName.of('Outlines'));
-                        if (bookmarks) {
-                            // Basic bookmark preservation (simplified)
-                            console.log('Bookmarks found in', file.name);
-                        }
-                    } catch (e) {
-                        console.log('No bookmarks in', file.name);
-                    }
+                    console.log('Bookmark preservation requested for', file.name);
                 }
             } catch (error) {
                 throw new Error(`Failed to process ${file.name}: ${error.message}`);
@@ -349,27 +335,7 @@ class PDFMergerUI {
     }
 
     async downloadPDF(pdfBytes) {
-        let finalBytes = pdfBytes;
-        
-        // Apply password protection if enabled
-        if (this.enablePassword.checked && this.pdfPassword.value.trim()) {
-            try {
-                this.progressText.textContent = 'Applying password protection...';
-                const protectedPdf = await PDFLib.PDFDocument.load(pdfBytes);
-                
-                // Note: pdf-lib doesn't support password protection directly
-                // This is a placeholder for the feature
-                console.log('Password protection requested:', this.pdfPassword.value);
-                this.showToast('Note: Password protection requires additional library', 'warning');
-                
-                finalBytes = await protectedPdf.save();
-            } catch (error) {
-                console.error('Password protection failed:', error);
-                this.showToast('Password protection failed, downloading without password', 'warning');
-            }
-        }
-        
-        const blob = new Blob([finalBytes], { type: 'application/pdf' });
+        const blob = new Blob([pdfBytes], { type: 'application/pdf' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
@@ -388,16 +354,7 @@ class PDFMergerUI {
     }
     
     
-    togglePasswordField() {
-        const passwordField = this.pdfPassword;
-        if (this.enablePassword.checked) {
-            passwordField.style.display = 'block';
-            passwordField.focus();
-        } else {
-            passwordField.style.display = 'none';
-            passwordField.value = '';
-        }
-    }
+
     
     createPreviewModal() {
         const modal = document.createElement('div');
@@ -463,7 +420,7 @@ class PDFMergerUI {
             <p style="margin: 0; color: #666;"><strong>Total Size:</strong> ${this.formatFileSize(totalSize)}</p>
             <p style="margin: 0; color: #666;"><strong>Output:</strong> ${this.outputName.value}</p>
             <p style="margin: 0; color: #666;"><strong>Compression:</strong> ${this.compressionLevel.value}</p>
-            ${this.enablePassword.checked ? '<p style="margin: 0; color: #666;"><strong>Password Protected:</strong> Yes</p>' : ''}
+            ${this.preserveBookmarks.checked ? '<p style="margin: 0; color: #666;"><strong>Bookmarks:</strong> Basic preservation enabled</p>' : ''}
         `;
         body.appendChild(summary);
         

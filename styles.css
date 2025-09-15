@@ -349,21 +349,7 @@ body::before {
     cursor: pointer;
 }
 
-.password-section input[type="password"] {
-    margin-top: 8px;
-    animation: slideDown 0.3s ease;
-}
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 .merge-actions {
     display: flex;
