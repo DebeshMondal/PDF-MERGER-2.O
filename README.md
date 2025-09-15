@@ -12,7 +12,6 @@ A comprehensive, modern web application for PDF manipulation—merge, split, and
 - **Progress bar** with detailed status during merging
 - **Download** the merged PDF instantly
 - **Compression options** (None, Low, Medium, High)
-- **Preserve bookmarks** option (basic support)
 - **Metadata preservation** for merged documents
 - **Preview mode** to review files before merging
 - **Enhanced error handling** with toast notifications

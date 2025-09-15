@@ -23,7 +23,7 @@ class PDFMergerUI {
         this.previewBtn = document.getElementById('previewBtn');
         this.outputName = document.getElementById('outputName');
         this.compressionLevel = document.getElementById('compressionLevel');
-        this.preserveBookmarks = document.getElementById('preserveBookmarks');
+
 
         this.progressSection = document.getElementById('progressSection');
         this.progressFill = document.getElementById('progressFill');
@@ -306,10 +306,7 @@ class PDFMergerUI {
                     mergedPdf.addPage(page);
                 });
                 
-                // Note: Bookmark preservation has limited support in pdf-lib
-                if (this.preserveBookmarks.checked) {
-                    console.log('Bookmark preservation requested for', file.name);
-                }
+
             } catch (error) {
                 throw new Error(`Failed to process ${file.name}: ${error.message}`);
             }
@@ -420,7 +417,7 @@ class PDFMergerUI {
             <p style="margin: 0; color: #666;"><strong>Total Size:</strong> ${this.formatFileSize(totalSize)}</p>
             <p style="margin: 0; color: #666;"><strong>Output:</strong> ${this.outputName.value}</p>
             <p style="margin: 0; color: #666;"><strong>Compression:</strong> ${this.compressionLevel.value}</p>
-            ${this.preserveBookmarks.checked ? '<p style="margin: 0; color: #666;"><strong>Bookmarks:</strong> Basic preservation enabled</p>' : ''}
+
         `;
         body.appendChild(summary);
         
