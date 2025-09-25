@@ -852,6 +852,158 @@ body::before {
     }
 }
 
+.file-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.file-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.file-header i {
+    font-size: 2rem;
+    color: #e74c3c;
+}
+
+.file-details {
+    flex: 1;
+}
+
+.file-details h3 {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.file-details p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.compression-options {
+    background: #f8f9ff;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 4px solid #667eea;
+}
+
+.compression-options h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.option-group {
+    margin-bottom: 20px;
+}
+
+.option-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.option-group select,
+.option-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.option-group select:focus,
+.option-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.compression-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+}
+
+.info-item {
+    text-align: center;
+}
+
+.info-item .label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.info-item .value {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.dark-mode .file-card {
+    background: #1e1e2e;
+    border-color: rgba(116, 192, 252, 0.2);
+}
+
+.dark-mode .file-details h3 {
+    color: #e0e6ed;
+}
+
+.dark-mode .file-details p {
+    color: #a6adc8;
+}
+
+.dark-mode .compression-options {
+    background: #2a2a3e;
+    border-left-color: #74c0fc;
+}
+
+.dark-mode .compression-options h3 {
+    color: #e0e6ed;
+}
+
+.dark-mode .option-group label {
+    color: #e0e6ed;
+}
+
+.dark-mode .option-group select,
+.dark-mode .option-group input {
+    background: #1e1e2e;
+    color: #e0e6ed;
+    border-color: #74c0fc;
+}
+
+.dark-mode .compression-info {
+    background: #1e1e2e;
+}
+
+.dark-mode .info-item .label {
+    color: #a6adc8;
+}
+
+.dark-mode .info-item .value {
+    color: #e0e6ed;
+}
+
 .total-info {
     margin-top: 15px;
     padding: 12px;
